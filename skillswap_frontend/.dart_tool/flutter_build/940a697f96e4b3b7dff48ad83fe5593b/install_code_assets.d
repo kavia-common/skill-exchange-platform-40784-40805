@@ -1,0 +1,1 @@
+ /home/kavia/workspace/code-generation/skill-exchange-platform-40784-40805/skillswap_frontend/.dart_tool/flutter_build/940a697f96e4b3b7dff48ad83fe5593b/native_assets.json: 
