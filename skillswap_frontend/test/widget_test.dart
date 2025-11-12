@@ -3,16 +3,20 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:skillswap_frontend/main.dart';
 
 void main() {
-  testWidgets('App generation message displayed', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Bottom navigation shows 5 destinations and Home tab', (WidgetTester tester) async {
+    await tester.pumpWidget(const SkillSwapApp());
+    await tester.pumpAndSettle();
 
-    expect(find.text('skillswap_frontend App is being generated...'), findsOneWidget);
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
-  });
+    // Expect default Home title present
+    expect(find.text('Home'), findsWidgets);
 
-  testWidgets('App bar has correct title', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+    // NavigationBar should exist
+    expect(find.byType(NavigationBar), findsOneWidget);
 
-    expect(find.text('skillswap_frontend'), findsOneWidget);
+    // Check presence of key labels
+    expect(find.text('Matches'), findsOneWidget);
+    expect(find.text('Calendar'), findsOneWidget);
+    expect(find.text('Chat'), findsOneWidget);
+    expect(find.text('Profile'), findsOneWidget);
   });
 }
